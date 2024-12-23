@@ -11,7 +11,7 @@ export const POST = async (
     const res: AxiosResponse = await axiosInstance.post(url, requestBody);
     return res;
   } catch (error: any) {
-    return error.response.data;
+    return error?.response;
   }
 };
 
@@ -20,7 +20,7 @@ export const GET = async (url: string): Promise<AxiosResponse | any> => {
     const res: AxiosResponse = await axiosInstance.get(url);
     return res;
   } catch (error: any) {
-    return error.response.data;
+    return error?.response;
   }
 };
 
@@ -32,7 +32,7 @@ export const PATCH = async (
     const res: AxiosResponse = await axiosInstance.patch(url, requestBody);
     return res;
   } catch (error: any) {
-    return error.response;
+    return error?.response;
   }
 };
 
@@ -46,6 +46,6 @@ export const DELETE = async (
     });
     return res;
   } catch (error: any) {
-    return error.response;
+    return error?.response;
   }
 };

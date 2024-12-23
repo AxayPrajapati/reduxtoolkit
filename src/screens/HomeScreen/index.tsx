@@ -31,7 +31,7 @@ const HomeScreen: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    //fetchUser();
+    fetchUser();
   }, []);
 
   // const queryClient = useQueryClient();
@@ -39,6 +39,7 @@ const HomeScreen: React.FC = () => {
   const fetchUser = async () => {
     const url = 'employees'; // Adjust the URL as needed
     const response = await GET(url);
+    console.log('res::::', response);
   };
 
   const onPressLogOut = () => {

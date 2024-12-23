@@ -32,6 +32,8 @@ const skeletonColor = '#E7E7EC';
 const SeaDeep = '#2C3A42';
 const skeletonLayoutColor = '#D3D3D3';
 const errorColor = 'red';
+const black = '#000000';
+const activeColor = '#0000FF';
 
 export {
   whiteColor,
@@ -68,4 +70,6 @@ export {
   skeletonLayoutColor,
   SeaDeep,
   errorColor,
+  black,
+  activeColor,
 };
