@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import HomeStack from './HomeStack';
 import LoginStack from './LoginStack';
-import {RootState} from '../store/store';
+import {RootState} from '../reduxtoolkit/store/store';
 
 const MainNav = () => {
   const isLogin = useSelector((state: RootState) => state.userData.isLogin);

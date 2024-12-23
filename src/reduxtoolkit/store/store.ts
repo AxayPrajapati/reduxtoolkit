@@ -11,16 +11,18 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import authSlice from './slices/authSlice';
-
-const rootReducer = combineReducers({
-  userData: authSlice,
-});
+import authSlice from '../slices/authSlice';
+import eventSlice from '../slices/eventsSlice';
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
 };
+
+const rootReducer = combineReducers({
+  authSlice,
+  eventSlice,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
@@ -34,7 +36,8 @@ export const store = configureStore({
     }),
 });
 
-export const persistor = persistStore(store);
+export const persister = persistStore(store);
 
+// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

@@ -8,7 +8,7 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 import styles from './Styles';
-import {login} from '../../store/slices/authSlice';
+import {login} from '../../reduxtoolkit/slices/authSlice';
 import {useDispatch} from 'react-redux';
 import CustomeButton from '../../components/CustomButton';
 

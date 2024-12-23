@@ -10,7 +10,7 @@ import {SafeAreaView, TouchableOpacity} from 'react-native';
 import styles from './Styles';
 
 import CustomText from '../../components/CustomText';
-import {logOut} from '../../store/slices/authSlice';
+import {logOut} from '../../reduxtoolkit/slices/authSlice';
 import {useDispatch, useSelector} from 'react-redux';
 import CustomeButton from '../../components/CustomButton';
 import {GET} from '../../services/axiosServices';
