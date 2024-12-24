@@ -5,7 +5,7 @@ import {styles} from './Styles';
 const ProfileScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Search Screen</Text>
+      <Text style={styles.title}>Profile Screen</Text>
       <Text style={styles.message}>No functionality implemented yet.</Text>
     </View>
   );

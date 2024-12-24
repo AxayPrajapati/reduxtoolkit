@@ -4,13 +4,14 @@ import {
   createBottomTabNavigator,
   BottomTabScreenProps,
 } from '@react-navigation/bottom-tabs';
-import CustomImages from '../lib/Image';
+import Images from '../lib/Image';
 import {whiteColor, activeColor, black} from '../lib/Colors';
 import EventScreen from '../screens/dashboard/EventScreen';
 import ProfileScreen from '../screens/dashboard/ProfileScreen';
 import SearchScreen from '../screens/dashboard/SearchScreen';
 import Favorite from '../screens/dashboard/Favorite';
 
+// Define the Tab navigation parameters
 type TabParamList = {
   Search: undefined;
   Events: undefined;
@@ -30,21 +31,25 @@ const TabBar: React.FC = () => {
         tabBarActiveTintColor: activeColor,
         tabBarInactiveTintColor: black,
         tabBarIcon: ({focused}: {focused: boolean}) => {
+          // Define icon based on route name
           let iconName: number | undefined;
 
           switch (route.name) {
             case 'Search':
-              iconName = CustomImages.downArrow;
+              iconName = Images.search;
               break;
             case 'Events':
-              iconName = CustomImages.downArrow;
+              iconName = Images.calendar;
               break;
             case 'Favorites':
-              iconName = CustomImages.downArrow;
+              iconName = Images.unlike;
               break;
             case 'Profile':
-              iconName = CustomImages.downArrow;
+              iconName = Images.user;
               break;
+            default:
+              console.error('No icon found for route:', route.name);
+              return null;
           }
 
           return (
@@ -61,40 +66,17 @@ const TabBar: React.FC = () => {
         },
         tabBarStyle: styles.tabBarStyle,
       })}>
-      <Tab.Screen
-        name="Search"
-        component={SearchScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Events"
-        component={EventScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Favorites"
-        component={Favorite}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="Events" component={EventScreen} />
+      <Tab.Screen name="Favorites" component={Favorite} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 };
 
 export default TabBar;
 
+// Define styles for the TabBar
 interface Styles {
   container: ViewStyle;
   icon: ImageStyle;

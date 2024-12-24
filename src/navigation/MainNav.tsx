@@ -5,7 +5,7 @@ import LoginStack from './LoginStack';
 import {RootState} from '../reduxtoolkit/store/store';
 
 const MainNav = () => {
-  const isLogin = useSelector((state: RootState) => state.userData.isLogin);
+  const isLogin = useSelector((state: RootState) => state.authSlice.isLogin);
 
   useEffect(() => {}, [isLogin]);
   return isLogin ? <HomeStack /> : <LoginStack />;
